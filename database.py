@@ -76,7 +76,88 @@ try:
             else:
                 return senur
     class baetaVid:
-        def biomynd(self):
-            pass
+        def biomynd(self,titill,aldurstakmark,gefidUt,rating,lengd,framleidandi,myndarskjal,lysing):
+            with conn.cursor() as cur:
+                sql = "insert into biomyndir(titill,aldurstakmark,gefidUt,rating,lengd,framleidandi,myndarskjal,lysing) values(%s,%s,%s,%s,%s,%s,%s,%s)"
+                cur.execute(sql,(titill,aldurstakmark,gefidUt,rating,lengd,framleidandi,myndarskjal,lysing))
+            if conn.affected_rows() > 0:
+                return True
+            else:
+                return False
+        def director(self,movieID,dirName):
+            with conn.cursor() as cur:
+                sql = "select dirID from directors where dirName = %s"
+                cur.execute(sql,dirName)
+                conn.commit()
+                dirID = None
+                for x in cur:
+                    for i in x:
+                        if i != None:
+                            dirID = i
+                if dirID:
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
+                else:
+                    sql = "insert into directors(dirName) values(%s)"
+                    cur.execute(sql,dirName)
+                    dirID = cur.lastrowid
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
+        def director(self,movieID,dirName):
+            with conn.cursor() as cur:
+                sql = "select dirID from directors where dirName = %s"
+                cur.execute(sql,dirName)
+                conn.commit()
+                dirID = None
+                for x in cur:
+                    for i in x:
+                        if i != None:
+                            dirID = i
+                if dirID:
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
+                else:
+                    sql = "insert into directors(dirName) values(%s)"
+                    cur.execute(sql,dirName)
+                    dirID = cur.lastrowid
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
+        def director(self,movieID,dirName):
+            with conn.cursor() as cur:
+                sql = "select dirID from directors where dirName = %s"
+                cur.execute(sql,dirName)
+                conn.commit()
+                dirID = None
+                for x in cur:
+                    for i in x:
+                        if i != None:
+                            dirID = i
+                if dirID:
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
+                else:
+                    sql = "insert into directors(dirName) values(%s)"
+                    cur.execute(sql,dirName)
+                    dirID = cur.lastrowid
+                    sql = "insert into bioDir values(%s,%s)"
+                    cur.execute(sql,(movieID,dirID))
+                    conn.commit()
+                    if conn.affected_rows() > 0:
+                        return True
 finally:
     conn.close()
