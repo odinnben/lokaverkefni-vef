@@ -10,7 +10,7 @@
 <body>
 <div class="eitthva">
   <form action="/action_page.php">
-  <input type="text" name="firstname" value="Leita...">
+  <input type="text" name="search" placeholder="Search..." ph>
   <input type="submit" value="Submit">
 </form> 
 </div>   
@@ -18,7 +18,7 @@
   <h1>Kvikmyndir</h1>
 </div>
 <div class="navbar">
-  <a href="#">eitthvað</a>
+  <a href="/kvikmyndir.tpl">eitthvað</a>
   <a href="#">eitthvað</a>
   <a href="#">eitthvað</a>
   <a href="#">eitthvað</a>
