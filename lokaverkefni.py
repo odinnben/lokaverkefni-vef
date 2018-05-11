@@ -3,7 +3,7 @@ import os, datetime
 from locale import *
 from beaker.middleware import SessionMiddleware
 from database import *
-setlocale(LC_TIME,"is-IS")
+setlocale(LC_TIME,"is_IS")
 session_opts = {
     'session.type': 'file',
     'session.data_dir': './data',
