@@ -531,5 +531,4 @@ def villa500(error):
         nyjustsenur.append(nyjustsen)
     return template("./sidur/annad",nafn=nafn,nyjustmyndir = nyjustmyndir,nyjustdirectors = nyjustdirectors, nyjustsenur = nyjustsenur,skilabod = "Villa 500")
 
-#run(host="0.0.0.0", port=os.environ.get('PORT'), app=app)
-run(host='localhost', port=8080, app=app, debug=True, reloader=True)
+run(host="0.0.0.0", port=os.environ.get('PORT'), app=app)
